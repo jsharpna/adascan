@@ -18,14 +18,15 @@ def run(hypo = 'null'):
     nsmod, nsada, nsmul, nsora = (-np.inf,-np.inf,-np.inf,-np.inf)
     for i in range(s):
         for j in range(s):
-            x = X[0,0,i*(N - h_up):(i*(N - h_up) + N), j*(N - h_up):(j*(N - h_up) + N)]
+            x = X[:,:,i*(N - h_up):(i*(N - h_up) + N), j*(N - h_up):(j*(N - h_up) + N)]
             es.build_dyad(x,6)
             es.build_scores(6)
             nsmod = max(nsmod,stat_calc(es.scores,N,method='adascan_mod',h_low = 10))
             nsada = max(nsada,stat_calc(es.scores,N,method='adascan',h_low = 10))
             nsmul = max(nsmul,stat_calc(es.scores,N,method='multi',h_low = 10))
             orac_sc = np.argmin(np.sum(np.abs(es.scores[:,0:2] - np.array(H)),axis=1))
-            nsora = max(nsora,stat_calc(es.scores[orac_sc:(orac_sc+1),:],N,method='oracle',h_low = 10))                es.build_dyad(x,6)
+            nsora = max(nsora,stat_calc(es.scores[orac_sc:(orac_sc+1),:],N,method='oracle',h_low = 10))                
+            es.build_dyad(x,6)
     return(np.array([nsada,nsmod,nsmul,nsora]))
 
 
