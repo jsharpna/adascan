@@ -6,7 +6,7 @@ s = 4
 h_up = 2**9
 N_large = N * s - h_up * (s - 1)
 es = EpsScan(10,20)
-T = 10
+T = 500
 H = [148,431]
 mu = 7./(H[0]*H[1])**0.5
 
@@ -25,7 +25,8 @@ def run(hypo = 'null'):
             nsada = max(nsada,stat_calc(es.scores,N,method='adascan',h_low = 10))
             nsmul = max(nsmul,stat_calc(es.scores,N,method='multi',h_low = 10))
             orac_sc = np.argmin(np.sum(np.abs(es.scores[:,0:2] - np.array(H)),axis=1))
-            nsora = max(nsora,stat_calc(es.scores[orac_sc:(orac_sc+1),:],N,method='oracle',h_low = 10))                es.build_dyad(x,6)
+            nsora = max(nsora,stat_calc(es.scores[orac_sc:(orac_sc+1),:],N,method='oracle',h_low = 10))                
+            es.build_dyad(x,6)
     return(np.array([nsada,nsmod,nsmul,nsora]))
 
 
