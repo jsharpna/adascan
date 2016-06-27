@@ -18,7 +18,7 @@ def run(hypo = 'null'):
     nsmod, nsada, nsmul, nsora = (-np.inf,-np.inf,-np.inf,-np.inf)
     for i in range(s):
         for j in range(s):
-            x = X[0,0,i*(N - h_up):(i*(N - h_up) + N), j*(N - h_up):(j*(N - h_up) + N)]
+            x = X[:,:,i*(N - h_up):(i*(N - h_up) + N), j*(N - h_up):(j*(N - h_up) + N)]
             es.build_dyad(x,6)
             es.build_scores(6)
             nsmod = max(nsmod,stat_calc(es.scores,N,method='adascan_mod',h_low = 10))
