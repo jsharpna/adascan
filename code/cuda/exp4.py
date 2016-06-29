@@ -8,7 +8,7 @@ N_large = N * s - h_up * (s - 1)
 es = EpsScan(10,20)
 T = 500
 H = [148,431]
-mu = 7./(H[0]*H[1])**0.5
+mu = 6./(H[0]*H[1])**0.5
 
 def run(hypo = 'null'):
     if hypo == 'alt':
