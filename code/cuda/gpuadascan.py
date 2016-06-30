@@ -31,7 +31,7 @@ def stat_calc(scores,N,method='adascan_mod',h_low = 1):
     if method=='adascan_mod':
         nu = (2.*(np.log(N/scores[:,0]) + np.log(N/scores[:,1])))**0.5
     if method=='adascan':
-        nu = (2.*(np.log(N/scores[:,0] * (1 + scores[:,0] / h_low)**2.) + np.log(N/scores[:,1] * (1 + scores[:,1] / h_low)**2.)))**0.5
+        nu = (2.*(np.log(N/scores[:,0] * (1 + np.log(scores[:,0] / h_low))**2.) + np.log(N/scores[:,1] * (1 + np.log(scores[:,1] / h_low))**2.)))**0.5
     if method=='oracle':
         nu = (2.*(np.log(N/scores[:,0]) + np.log(N/scores[:,1])))**0.5
     if method=='multi':
