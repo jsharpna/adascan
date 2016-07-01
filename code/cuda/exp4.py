@@ -7,10 +7,9 @@ s = 4
 h_up = 2**9
 N_large = N * s - h_up * (s - 1)
 es = EpsScan(10,20)
-T = 2
+T = 50
 H = [148,431]
 mu = 7./(H[0]*H[1])**0.5
-#mu = 8./(H[0]*H[1])**0.5
 
 def run(hypo = 'null'):
     if hypo == 'alt':
@@ -39,5 +38,5 @@ for t in range(T):
     alt_stats[t,:] = run('alt')
 
 
-pickle.dump((null_stats,alt_stats),open('stats4-' + str(datetime.now().toordinal()) + '.pi','wb'))
+pickle.dump((null_stats,alt_stats),open('data/stats4-' + str(datetime.now().toordinal()) + '.pi','wb'))
 
