@@ -10,10 +10,17 @@ def plot_ROC(null,alt,linec,lw=2,lab=None):
     plt.plot(np.arange(len(null)+1)/float(len(null)),ROC,linec,linewidth=lw,label=lab)
 
 
-i = 2
-null,alt = pickle.load(open('stats' + str(i) + '.pi','r'))
+ofs = ["stats4-733838.pi","stats4-736124.pi","stats4-736666.pi","stats4-837664.pi","stats4-736222.pi","stats4-739459.pi","stats4-938287.pi"]
+
+null,alt = pickle.load(open('stats4-735235.pi','r'))
+for j in range(7):
+    nullt, altt = pickle.load(open(ofs[j],'r'))
+    null = np.vstack((null,nullt))
+    alt = np.vstack((alt,altt))
+
 leg = True
 
+i=4
 lty = ['b-','g-.','r--','m:']
 lw = [2,3,2,3.5]
 fs=11
