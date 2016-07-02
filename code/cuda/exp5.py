@@ -1,14 +1,15 @@
 from gpuadascan import *
 import pickle
+from datetime import datetime
 
 N = 2**11
 s = 4
 h_up = 2**9
 N_large = N * s - h_up * (s - 1)
 es = EpsScan(10,20)
-T = 500
-H = [148,431]
-mu = 6./(H[0]*H[1])**0.5
+T = 50
+H = [580,326]
+mu = 7./(H[0]*H[1])**0.5
 
 def run(hypo = 'null'):
     if hypo == 'alt':
@@ -37,5 +38,5 @@ for t in range(T):
     alt_stats[t,:] = run('alt')
 
 
-pickle.dump((null_stats,alt_stats),open('stats5.pi','wb'))
+pickle.dump((null_stats,alt_stats),open('data/stats5-' + str(np.random.randint(100000)) + '.pi','wb'))
 
