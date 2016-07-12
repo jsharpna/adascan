@@ -1,0 +1,57 @@
+
+% environments
+\newtheorem{thm}{Theorem}
+\newtheorem{prp}{Proposition}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+
+%\def\balign{\begin{align}}
+%\def\ealign{\end{align}}
+%\renewcommand{\theequation}{\star}
+\def\beq{\begin{equation}} % \setcounter{equation}{1}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray*}}
+\def\eeqn{\end{eqnarray*}}
+\def\Bitem{\begin{itemize}\setlength{\itemsep}{.2in}}
+\def\bitem{\begin{itemize}\setlength{\itemsep}{.05in}}
+\def\eitem{\end{itemize}}
+\def\Benum{\begin{enumerate}\setlength{\itemsep}{.2in}}
+\def\benum{\begin{enumerate}\setlength{\itemsep}{.05in}}
+\def\eenum{\end{enumerate}}
+\def\bmult{\begin{multline*}}
+\def\emult{\end{multline*}}
+\def\bcenter{\begin{center}}
+\def\ecenter{\end{center}}
+\def\bframe{\begin{frame}}
+\def\eframe{\end{frame}}
+
+
+% references
+\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\prpref}[1]{Proposition~\ref{prp:#1}}
+\newcommand{\corref}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\renewcommand{\algref}[1]{Algorithm~\ref{alg:#1}}
+
+% other symbols
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\def\eps{\epsilon}
+\def\implies{\ \Rightarrow \ }
+\def\iff{\ \Leftrightarrow \ }
+\def\defeq{\stackrel{\rm def}{=}}
+\def\symd{\triangle}
+
+\newcommand{\IND}[1]{\mathbbm{1}_{\{ #1 \}}}
+
+\def\spc{\vspace{-0.2in}}
+\def\comp{\mathsf{c}}
+\def\smallprod{\textstyle\prod}
+\def\smallsum{\textstyle\sum}
+\newcommand{\tprod}{{\textstyle\prod}}
+\newcommand{\tsum}{{\textstyle\sum}}
+\newcommand{\tsup}{{\textstyle\sup}}
+
+
